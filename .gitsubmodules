@@ -1,4 +1,0 @@
-[submodule "terrad"]
-	path = terrad
-	url = git@github.com:terra-money/core.git
-

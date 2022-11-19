@@ -34,6 +34,9 @@ telescope({
       duration: 'duration'
     }
   },
+  stargateClients: {
+    includeCosmosDefaultTypes: false
+  },
   lcdClients: {
     enabled: false
   },

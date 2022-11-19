@@ -3,44 +3,56 @@ import telescope from '@osmonauts/telescope';
 import { sync as rimraf } from 'rimraf';
 import { AMINO_MAP } from './aminos';
 
-const protoDirs = [join(__dirname, '/../proto')];
+const protoDirs = [
+  join(__dirname, '/../terrad/proto'),
+  join(__dirname, '/../terrad/third_party/proto')
+];
 const outPath = join(__dirname, '../src/codegen');
 rimraf(outPath);
 
 telescope({
   protoDirs,
   outPath,
-  options: {
-    tsDisable: {
-      files: [
-        'cosmos/authz/v1beta1/tx.amino.ts',
-        'cosmos/staking/v1beta1/tx.amino.ts'
-      ]
+  logLevel: 0,
+  useSDKTypes: false,
+  tsDisable: {
+    disableAll: false
+  },
+  eslintDisable: {
+    disableAll: true
+  },
+  prototypes: {
+    includePackageVar: true,
+    methods: {
+      fromJSON: true,
+      toJSON: true
     },
-    prototypes: {
-      includePackageVar: false,
-      typingsFormat: {
-        useDeepPartial: false,
-        useExact: false,
-        timestamp: 'timestamp',
-        duration: 'duration'
-      },
-      methods: {
-        toJSON: true,
-        fromJSON: true
-      }
-    },
-    aminoEncoding: {
-      enabled: true,
-      exceptions: AMINO_MAP
-    },
-    lcdClients: {
-      enabled: false
-    },
-    rpcClients: {
-      enabled: true,
-      camelCase: true
+    typingsFormat: {
+      useDeepPartial: false,
+      useExact: false,
+      timestamp: 'timestamp',
+      duration: 'duration'
     }
+  },
+  lcdClients: {
+    enabled: false
+  },
+  rpcClients: {
+    enabled: true,
+    inline: true,
+    extensions: false,
+    camelCase: false,
+    enabledServices: [
+      'Msg',
+      'Query',
+      'Service',
+      'ReflectionService',
+      'ABCIApplication'
+    ]
+  },
+  aminoEncoding: {
+    enabled: true,
+    AMINO_MAP
   }
 })
   .then(() => {

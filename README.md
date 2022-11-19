@@ -1,8 +1,8 @@
 # terrascope
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/545047/188804067-28e67e5e-0214-4449-ab04-2e0c564a6885.svg" width="80"><br />
-    terra
+  <img src="https://user-images.githubusercontent.com/545047/202829697-d78c96a0-e5e7-4c15-8885-f07a5f73ab93.svg" width="80"><br />
+    Fueled by a passionate community and deep developer talent pool, the Terra blockchain is fully community-owned and built to enable the next generation of Web3 products and services.
 </p>
 
 ## install

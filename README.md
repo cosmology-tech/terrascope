@@ -1,7 +1,7 @@
 # terrascope
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/545047/202829697-d78c96a0-e5e7-4c15-8885-f07a5f73ab93.svg" width="80"><br />
+  <img src="https://user-images.githubusercontent.com/545047/202830145-b52fb381-6d44-434b-a137-371abd05e1e5.svg" width="80"><br />
     Fueled by a passionate community and deep developer talent pool, the Terra blockchain is fully community-owned and built to enable the next generation of Web3 products and services.
 </p>
 
